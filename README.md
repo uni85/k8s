@@ -49,3 +49,13 @@ To deploy the **Production** version of the app (which scales to 5 replicas):
 
 ```bash
 kubectl apply -k overlays/production/
+```
+
+### Verification
+
+```bash
+# Verify the pods are running and check resource limits
+kubectl describe pods -l app=kubernetes-bootcamp
+
+# Check the Ingress routing rules
+kubectl get ingress bootcamp-ingress
