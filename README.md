@@ -39,16 +39,18 @@ A running Kubernetes cluster (Minikube, Kind, or EKS/GKE)
 Deploying to Production
 To apply the production overlay which scales the app and applies specific patches:
 
-Bash
 kubectl apply -k overlays/production/
+
 Verification
-Bash
+
 # Check pod status and resource limits
 kubectl describe pods -l app=kubernetes-bootcamp
 
 # Check the Ingress routing
 kubectl get ingress
+
 - Future Roadmap
+  
 [ ] Implement Horizontal Pod Autoscaler (HPA) based on CPU metrics.
 
 [ ] Add NetworkPolicies to restrict traffic to "Namespace-only."
