@@ -1,0 +1,11 @@
+resources:
+  - ../../base
+
+patches:
+  - target:
+      kind: Deployment
+      name: kubernetes-bootcamp
+    patch: |-
+      - op: replace
+        path: /spec/replicas
+        value: 5 # Scale to 5 pods for production
