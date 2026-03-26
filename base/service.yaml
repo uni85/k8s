@@ -3,10 +3,9 @@ kind: Service
 metadata:
   name: kubernetes-bootcamp-service
 spec:
-  type: NodePort
+  type: ClusterIP # Internal only; more secure than NodePort
   selector:
     app: kubernetes-bootcamp
   ports:
-    - port: 8080
+    - port: 80
       targetPort: 8080
-      protocol: TCP
